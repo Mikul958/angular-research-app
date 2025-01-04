@@ -1,0 +1,17 @@
+textarea {
+    margin-bottom: 10px;
+}
+
+.outputHeader {
+    margin-bottom: 10px;
+}
+
+.output {
+    background-color: #333333;
+    border: 2px solid black;
+    border-radius: 4px;
+    max-width: 80%;
+    padding: 8px;
+    margin-top: 0;
+    text-wrap: wrap;
+}

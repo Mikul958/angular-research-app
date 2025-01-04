@@ -1,0 +1,42 @@
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #141414;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    margin-top: 25px;
+    padding: 20px 0;
+    min-width: 500px;
+}
+
+table {
+    background-color: #262626;
+    border-collapse: collapse;
+    margin: auto;
+    width: 50%;
+    min-width: 300px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 5px 10px;
+}
+
+th {
+    background-color: #949494;
+}
+
+td {
+    background-color: #f0f0f0;
+    height: 1em;
+}
+
+.goBack {
+    display: flex;
+    justify-content: center;
+}

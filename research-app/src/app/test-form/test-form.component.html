@@ -1,0 +1,15 @@
+<div class="headerContainer">
+    <h1>Test Form</h1>
+    <p class="overview">
+        This page of the app was created to work with component composition and communication, as well as larger forms.
+        It will take the information you enter into the form, then display it in a table.
+        You can view the table by clicking on Submit after entering required information, 
+        and you can submit another form by clicking on Reset afterwards.
+    </p>
+</div>
+@if (!submitted) {
+    <app-form (submitEvent)="handleSubmit($event)"/>
+}
+@else {
+    <app-table [formData]=responseFromForm (backEvent)="handleBack()" />
+}

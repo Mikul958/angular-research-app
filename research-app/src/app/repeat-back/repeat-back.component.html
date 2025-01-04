@@ -1,0 +1,20 @@
+<div class="headerContainer">
+    <h1>Repeat Back</h1>
+    <p class="overview">
+        This page of the app was created to work with forms and pipes. It will take in a message that you enter and display in in all-lowercase and all-uppercase.
+        You can get started by entering text in the field below; changes will show up automatically.
+    </p>
+</div>
+<div class="headerContainer">
+    <h3>Type Something Here!</h3>
+    <!-- [(ngModel)] changes userInput variable to contents of the textarea, (input) calls updateString() -->
+    <textarea class="input" id="user-input" [(ngModel)]="userInput" (input)="updateString()" rows="3" cols="30" placeholder="Type something..."></textarea>
+</div>
+<div class="headerContainer">
+    <br>
+    <h3 class="outputHeader">Lowercase Output:</h3>
+    <p class="output">{{ displayedString | lowercase }}</p>
+    <h3 class="outputHeader">Uppercase Output:</h3>
+    <p class="output">{{ displayedString | uppercase }}</p>
+    <br>
+</div>

@@ -1,0 +1,51 @@
+<div class="formContainer">
+    <h3>Name</h3>
+    <div class="nameContainer">
+        <div class="nameFields">
+            <label for="first">First Name: </label>
+            <label for="middle">Middle Initial: </label>
+            <label for="last">Last Name: </label>
+        </div>
+        <div class="nameFields">
+            <input type="text" id="first" [(ngModel)]="firstName" maxlength="25" class="input" />
+            <input type="text" id="middle" [(ngModel)]="middleInitial" maxlength="1" class="input" />
+            <input type="text" id="last" [(ngModel)]="lastName" maxlength="25" class="input" />
+        </div>
+    </div>
+    <h3>Occupation</h3>
+    <div class="occupation">
+        <input type="radio" id="student" name="occupation" (change)="isStudent=true" checked />
+        <label for="student"> Student</label><br>
+        <input type="radio" id="faculty" name="occupation" (change)="isStudent=false"/>
+        <label for="faculty"> Faculty</label>
+    </div>
+    <div class="checkboxes">
+        @if (isStudent) {
+            <h3>Classes:</h3>
+            <input type="checkbox" id="csce145" [(ngModel)]="checkedStudent[0]" />
+            <label for="csce145"> {{ studentLabels[0] }}</label><br>
+            <input type="checkbox" id="csce490" [(ngModel)]="checkedStudent[1]" />
+            <label for="csce490"> {{ studentLabels[1] }}</label><br>
+            <input type="checkbox" id="engl462" [(ngModel)]="checkedStudent[2]" />
+            <label for="engl462"> {{ studentLabels[2] }}</label><br>
+            <input type="checkbox" id="math141" [(ngModel)]="checkedStudent[3]" />
+            <label for="math141"> {{ studentLabels[3] }}</label><br>
+            <input type="checkbox" id="stat509" [(ngModel)]="checkedStudent[4]" />
+            <label for="stat509"> {{ studentLabels[4] }}</label><br>
+        }
+        @else {
+            <h3>Colleges:</h3>
+            <input type="checkbox" id="engineering" [(ngModel)]="checkedFaculty[0]" />
+            <label for="engineering"> {{ facultyLabels[0] }}</label><br>
+            <input type="checkbox" id="arts" [(ngModel)]="checkedFaculty[1]" />
+            <label for="arts"> {{ facultyLabels[1] }}</label><br>
+            <input type="checkbox" id="music" [(ngModel)]="checkedFaculty[2]" />
+            <label for="music"> {{ facultyLabels[2] }}</label><br>
+            <input type="checkbox" id="business" [(ngModel)]="checkedFaculty[3]" />
+            <label for="business"> {{ facultyLabels[3] }}</label>
+        }
+    </div>
+    <div class="submitButton">
+        <button (click)="submitForm()">Submit!</button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="tableContainer">
+    <h2>Your Information:</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Last Name</th>
+        </tr>
+        <tr>
+            <td>{{ formData.firstName }}</td>
+            <td>{{ formData.middleInitial }}</td>
+            <td>{{ formData.lastName }}</td>
+        </tr>
+        <tr>
+            <th colspan="3">{{ getDataHeader() }}</th>
+        </tr>
+        <tr>
+            <td colspan="3">{{ getData() }}</td>
+        </tr>
+    </table>
+    <div class="goBack">
+        <button (click)="goBack()">Go Back!</button>
+    </div>
+</div>

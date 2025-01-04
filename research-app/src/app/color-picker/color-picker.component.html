@@ -1,0 +1,27 @@
+<div class="headerContainer">
+    <h1>Color Picker</h1>
+    <p class="overview">
+        This page of the app was created to work with buttons and text fields, as well as binding variables to CSS properties.
+        Select a color in the box below (or enter your own 6-digit hex code) and watch the background of the outside box change.
+        If the Hex Code option is selected, the color will also update with each new hex code, as long as the code in the field is valid.
+    </p>
+</div>
+<div class="colorContainer">
+    <div class="outerBox" [style.background-color]="this.color">
+        <div class="innerBox">
+            <input type="radio" id="black" name="color" (change)="updateColor('black')" checked />
+            <label for="white">Black</label><br>
+            <input type="radio" id="red" name="color" (change)="updateColor('red')" />
+            <label for="red">Red</label><br>
+            <input type="radio" id="blue" name="color" (change)="updateColor('blue')" />
+            <label for="blue">Blue</label><br>
+            <input type="radio" id="green" name="color" (change)="updateColor('green')" />
+            <label for="green">Green</label><br>
+            <input type="radio" id="yellow" name="color" (change)="updateColor('yellow')" />
+            <label for="yellow">Yellow</label><br>
+            <input type="radio" id="custom" name="color" (change)="updateColor('use-hex')"/>
+            <label for="custom">Hex Code: </label>
+            <input type="text" id="hex-field" [(ngModel)]="hex" (input)="validateHex()" class="input"/>
+        </div>
+    </div>
+</div>

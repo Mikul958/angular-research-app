@@ -1,0 +1,33 @@
+<div class="headerContainer">
+    <h1>Calculator</h1>
+    <p class="overview">
+        This section of the app was created to work with different types of input fields, as well as dynamically generating information on the page.
+        Enter numbers in each of the operand fields, then select an operation and submit to calculate the answer.
+        After a calculation, calculation history will be displayed and updated with the previous 10 calculations.
+    </p>
+</div>
+<div class="headerContainer">
+    <h2>Perform an operation to start!</h2>
+    <div class="calculatorContainer">
+        <input type="text" id="operand-1" [(ngModel)]="firstOperand" class="input" />
+        <select id="operators" [(ngModel)]="operator" (input)="allowOperation = true" class="input">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">x</option>
+            <option value="/">/</option>
+            <option value="^">^</option>
+        </select>
+        <input type="text" id="operand-2" [(ngModel)]="secondOperand" class="input" />
+    </div>
+    <button [disabled]="!allowOperation" (click)="calculate()">Calculate!</button>
+</div>
+<div class="historyContainer">
+    <h2>History</h2>
+    @if (history.length > 0) {
+        <div class="history">
+            @for (answer of history; track answer.id) {
+                <div>{{ answer.content }}</div>
+            }
+        </div>
+    }
+</div>
